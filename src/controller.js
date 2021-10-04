@@ -14,13 +14,15 @@ async function getRequest(link) {
 
 const getPairsOfPlayers = async (req = request, resp = response, next) => {
   //Implementar logica aquí
-  const r = await getRequest(pData)
-  //console.log("it seems to read")
-  let number=5
-  return resp.json({ message: r});
+  const allplayers = await getRequest(pData)
+  allplayers.foreach(player =>{
+    console.log(req.query.input)
+    pairs = getPairs(req, allplayers, allplayers.values.h_in)
+  })
+  return resp.json({ message: req.status});
 };
 1
-const getPairs = (dat)=>{
+const getPairs = (desired, dat, playerheight)=>{
   return dat
 }
 module.exports = { getPairsOfPlayers , getRequest};

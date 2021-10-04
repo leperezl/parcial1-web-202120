@@ -7,8 +7,8 @@ const message = document.getElementById('message');
 
 enterButton.addEventListener('click', (event) => {
   //Implementar lógica del button submit
-  alert('Implementar lógica del button submit');
-  getresults(123);
+  alert('Su data ha sido enviada');
+  getresults(input.value);
   event.preventDefault();
 });
 
@@ -19,7 +19,7 @@ enterButton.addEventListener('click', (event) => {
 async function getresults(heightRef) {
   const resp = await fetch(`api?input=${heightRef}`);
   const data = await resp.json();
-  console.log('data from back', data);
+  console.log("data from back", data);
   //printValues(data);
 }
 
